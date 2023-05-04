@@ -23,7 +23,7 @@ const menus = [
 ];
 ---
 
-<section class="py-6 bg-white">
+<section class="py-6 bg-white dark:bg-gray-800">
   <div class="container mx-auto px-4">
     <div
       class="flex items-center justify-between px-6 py-3.5 bg-gray-100 border border-gray-100 rounded-full"
@@ -61,7 +61,7 @@ const menus = [
         <div class="flex flex-wrap items-center">
           <div class="w-auto hidden lg:block">
             <div class="flex flex-wrap -m-2">
-              <div class="w-full md:w-auto p-2">
+              <div class="w-full md:w-auto p-2 flex">
                 <a
                   class="block w-full px-4 py-2.5 text-sm text-center text-white font-bold bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-200 rounded-full"
                   href="#"
@@ -69,6 +69,12 @@ const menus = [
                 >
                   Buy Online
                 </a>
+                <button
+                  id="ld"
+                  class="ml-2 block w-full px-4 py-2.5 text-sm text-center text-white hover:text-black font-bold bg-black hover:bg-white focus:ring-4 focus:ring-blue-200 rounded-full"
+                >
+                  Light/Dark
+                </button>
               </div>
             </div>
           </div>
@@ -100,17 +106,18 @@ const menus = [
       class="hidden navbar-menu fixed top-0 left-0 bottom-0 w-4/6 sm:max-w-xs z-50"
       id="toggle"
     >
-      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-80" id="hidebg"></div>
+      <div
+        class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-80"
+        id="hidebg"
+      >
+      </div>
       <nav class="relative z-10 px-9 pt-8 bg-white h-full overflow-y-auto">
         <div class="flex flex-wrap justify-between h-full">
           <div class="w-full">
             <div class="flex items-center justify-between -m-2">
               <div class="w-auto p-2">
                 <a class="inline-block" href="#">
-                  <img
-                    src="/logo_b.png"
-                    alt="Value-Top"
-                  />
+                  <img src="/logo_b.png" alt="Value-Top" />
                 </a>
               </div>
               <div class="w-auto p-2">
@@ -173,13 +180,20 @@ const menus = [
     toggle.classList.toggle("hidden");
   });
 
-  const hide =document.getElementById('hide');
-  hide.addEventListener("click", ()=>{
+  const hide = document.getElementById("hide");
+  hide.addEventListener("click", () => {
     toggle.classList.toggle("hidden");
   });
 
-  const hidebg =document.getElementById('hidebg');
-  hidebg.addEventListener("click", ()=>{
+  const hidebg = document.getElementById("hidebg");
+  hidebg.addEventListener("click", () => {
     toggle.classList.toggle("hidden");
   });
+
+  const ld = document.getElementById("ld");
+  ld.addEventListener("click", () => {
+    var element = document.documentElement;
+   element.classList.toggle("dark");
+  });
+
 </script>
